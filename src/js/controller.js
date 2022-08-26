@@ -11,13 +11,6 @@ import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 import resultsView from './views/resultsView.js';
 
-//Parcel only understands this. NOT JAVASCRIPT
-// if (module.hot) {
-//   module.hot.accept();
-// }
-
-// https://forkify-api.herokuapp.com/v2
-
 const controlRecipes = async function () {
   try {
     const id = window.location.hash.slice(1);
@@ -124,10 +117,6 @@ const controlAddRecipe = async function (newRecipe) {
   }
 };
 
-const newFeature = function () {
-  console.log('Welcome to the application');
-};
-
 const init = function () {
   bookmarksView.addHandlerRender(controlBookmarks);
   recipeView.addHandlerRender(controlRecipes);
@@ -136,6 +125,5 @@ const init = function () {
   paginationView.addClickonBTNS(controlPagination);
   recipeView.addHandlerAddBookmark(controlAddBookmark);
   addRecipeView.addHandlerUpload(controlAddRecipe);
-  newFeature();
 };
 init();
